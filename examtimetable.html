@@ -1,0 +1,139 @@
+<?php $conn = mysqli_connect("localhost", "root", "", "examhelper"); ?>
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Time table </title>
+
+	<style type="text/css">
+		.headin
+		{
+			font-size: 30px;
+			text-align: center;
+			
+		}
+	</style>
+</head>
+<body style="background-image: url('https://th.bing.com/th/id/OIP.pENsrXZ3F7yXMHHRIHS22QHaEK?pid=ImgDet&rs=1');color: white;font-family: 'Montserrat', sans-serif;">
+
+
+
+
+
+<!--Navigation bar -->
+
+<div>
+
+  <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  font-size: 18px;
+}
+</style>
+
+  <ul>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a class="active" href="#home" style="background-color: whitesmoke;
+  color: black;">Exam time table</a></li>
+  <li><a href="#news">Exam Alteration</a></li>
+  <li><a href="#contact">Feed back</a></li>
+  <li><a href="#about">Contact us</a></li>
+   <li style="float: right;"><a href="#about">Login</a></li>
+</ul>
+<br>
+<div class="headin" style="color: white;">
+Welcome Admistrator
+</div>
+<br>
+
+<!--taking file input>-->
+
+	<form class="" action="" method="post" enctype="multipart/form-data">
+			<input type="file" name="excel" required value="">
+			<button type="submit" name="import">Import</button>
+		</form>
+
+<!--end taking file input>-->
+
+<hr>
+		<table border = 1>
+			<tr>
+				<td>Date</td>
+				<td>Day</td>
+				<td>tname</td>
+			
+			</tr>
+			<?php
+			$i = 1;
+			$rows = mysqli_query($conn, "SELECT * FROM sheet1");
+			foreach($rows as $row) :
+			?>
+			<tr>
+				
+				<td> <?php echo $row["date"]; ?> </td>
+				<td> <?php echo $row["day"]; ?> </td>
+				<td> <?php echo $row["tname"]; ?> </td>
+			</tr>
+			<?php endforeach; ?>
+		</table>
+
+<!-- php code -->
+
+<?php
+		if(isset($_POST["import"])){
+			$fileName = $_FILES["excel"]["name"];
+			$fileExtension = explode('.', $fileName);
+      $fileExtension = strtolower(end($fileExtension));
+			$newFileName = date("Y.m.d") . " - " . date("h.i.sa") . "." . $fileExtension;
+
+			$targetDirectory = "uploads/" . $newFileName;
+			move_uploaded_file($_FILES['excel']['tmp_name'], $targetDirectory);
+
+			error_reporting(0);
+			ini_set('display_errors', 0);
+
+			require 'excelReader/excel_reader2.php';
+			require 'excelReader/SpreadsheetReader.php';
+
+			$reader = new SpreadsheetReader($targetDirectory);
+			foreach($reader as $key => $row){
+				$date= $row[0];
+				$day=$row[1];
+				$tname = $row[2];
+				$venue = $row[3];
+				$btime = $row[4];
+				$etime = $row[5];
+				$ename = $row[6];
+				$type = $row[7];
+				
+				mysqli_query($conn, "INSERT INTO sheet1 VALUES('$date','$day','$tname','$venue','$btime','$etime','$ename','$type')");
+			}
+
+	
+		}
+		?>
+
+</body>
+</html>

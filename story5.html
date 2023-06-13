@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Communication</title>
+
+	<style type="text/css">
+		.headin
+		{
+			font-size: 30px;
+			text-align: center;
+			
+		}
+
+
+	</style>
+	<style>
+    table {
+        border-collapse: collapse;
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 5px;
+    }
+
+    .updated {
+        background-color: red;
+    }
+</style>
+</head>
+<body style="background-image: url('https://th.bing.com/th/id/OIP.pENsrXZ3F7yXMHHRIHS22QHaEK?pid=ImgDet&rs=1');color: white;font-family: 'Montserrat', sans-serif;">
+
+
+
+
+
+<!--Navigation bar -->
+
+<div>
+
+  <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  font-size: 18px;
+}
+</style>
+
+  <ul>
+  <li><a class="active" href="main.html">Home</a></li>
+  <li><a class="active" href="#home" style="background-color: whitesmoke;
+  color: black;">Exam time table</a></li>
+  <li><a href="http://localhost/nanu/aexamalterationview.php">Exam Alteration</a></li>
+  <li><a href="#contact">Feed back</a></li>
+  <li><a href="#about">Contact us</a></li>
+   <li style="float: right;"><a href="#about">Login</a></li>
+</ul>
+<br>
+<div class="headin" style="color: white;">
+Welcome Admistrator
+</div>
+<br>
+<br>
+
+<div>
+<div style="color: black;background-color: #333;">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #333;;
+  padding: 20px;
+}
+
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+</style>
+
+<div class="container">
+  <form action="https://formspree.io/f/xoqzzabp" method="POST" >
+  <div class="row">
+    <div class="col-25">
+      <label for="fname">Teacher Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="fname" name="firstname" placeholder="Enter the teacher name you want to send message..">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="lname">Notify the assignment</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="lname" name="lastname" placeholder="Enter name for what exam You want to notify">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="country">Exam Type </label>
+    </div>
+    <div class="col-75">
+      <select id="country" name="country">
+        <option value="australia">Periodical</option>
+        <option value="canada">Midterm</option>
+        <option value="usa">End Sem </option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+      <label for="subject">Subject</label>
+    </div>
+    <div class="col-75">
+      <textarea id="subject" name="subject" placeholder="Enter the relavent information ..." style="height:200px"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <input type="submit" value="Submit" style="background-color:black;">
+  </div>
+  </form>
+</div>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>

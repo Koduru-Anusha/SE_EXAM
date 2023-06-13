@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Black Background with White Text</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+         
+        
+          
+        }
+
+        .fade-in-out {
+            animation: fade-in-out 2.6s linear infinite;
+        }
+
+        @keyframes fade-in-out {
+            0%, 100% {
+                opacity: 0;
+            }
+            20%, 80% {
+                opacity: 1;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var messageElement = document.getElementById("message");
+
+            // Display "Sit Back And Relax" for the first 3 seconds
+            messageElement.textContent = "Sit Back And Relax";
+            setTimeout(function() {
+                // Display "We are Altering The Exam duty for You" for the next 3 seconds
+                messageElement.textContent = "We are Altering The Exam duty for You";
+                setTimeout(function() {
+                    // Display "Thank you for waiting we successfully Altered the exam duty for you" for the next 3 seconds
+                    messageElement.textContent = "Thank you for waiting we successfully Altered the exam duty for you";
+                }, 3000);
+            }, 3000);
+        });
+    </script>
+</head>
+<body style="background-image: url('https://imageio.forbes.com/specials-images/imageserve/647e510ff0e5332891595934/0x0.jpg?format=jpg&width=1200');background-attachment: fixed;
+background-repeat: no-repeat;background-size: 100% 100%;">
+    
+
+<!--Navigation bar -->
+
+<div>
+
+    <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+    font-size: 18px;
+  }
+  
+  .navbrar{
+      overflow: hidden;
+  
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  .navbrar1{
+      overflow: hidden;
+  
+    position: fixed;
+  
+  }
+  
+  </style>
+  
+    <ul class="navbrar">
+    <li><a class="active" href="main.html">Home</a></li>
+    <li><a class="active" href="#home" style="background-color: whitesmoke;
+    color: black;">Exam time table</a></li>
+    <li><a href="http://localhost/nanu/aexamalterationview.php" target="_blank">Exam Alteration</a></li>
+    <li><a href="#contact">Feed back</a></li>
+    <li><a href="#about">Contact us</a></li>
+     <li style="float: right;"><a href="#about">Hello Arjun</a></li>
+  </ul>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+    <div id="message" class="fade-in-out" style="font-size: 30px; text-align: center;"></div>
+</body>
+</html>

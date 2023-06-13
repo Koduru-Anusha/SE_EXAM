@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+    
+    form {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body style="background-image: url('https://static.wixstatic.com/media/c5b0c2_842504a82d1c4ce09ad60c443b602d66~mv2.jpg/v1/fill/w_628,h_420,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/macbook-smaller-black-background.jpg' );background-attachment: fixed;
+background-size: 100% 100%;font-family: 'Montserrat', sans-serif;">
+
+<!--Navigation bar -->
+
+<div>
+
+    <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+    font-size: 18px;
+  }
+  </style>
+  
+    <ul>
+    <li><a class="active" href="main.html">Home</a></li>
+    <li><a class="active" href="#home" style="background-color: whitesmoke;
+    color: black;">Exam time table</a></li>
+    <li><a href="http://localhost/nanu/aexamalterationview.php">Exam Alteration</a></li>
+    <li><a href="#contact">Feed back</a></li>
+    <li><a href="#about">Contact us</a></li>
+     <li style="float: right;"><a href="#about">Hello Arjun</a></li>
+  </ul>
+  <br>
+  <div class="headin" style="color: white;">
+ 
+  </div>
+  <br>
+  <br>
+  <p style="font-size: 35px;text-align: center;color:white;"> Cancel Your Examination </p>
+  <form method="POST" action="cancl.php" style="margin-top: 200px;background-color: transparent;color: white;" >
+    <label for="name">Enter The Exam You Want To Cancel:</label>
+    <input type="text" id="name" name="name" required style="background-color: transparent;color:white">
+    <input type="submit" value="Delete" style="color:white;background-color: grey;">
+  </form>
+</body>
+</html>

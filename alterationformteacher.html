@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Input</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 40px;
+      
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+          font-size: 20px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid black;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        input[type="file"] {
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body style = 'background-image: url("https://www.pixelstalk.net/wp-content/uploads/images5/Road-4K-Black-Wallpaper-768x432.jpg");background-size: cover;
+background-position: center;
+background-repeat: no-repeat;color: white;opacity: 0.87;'>
+    
+    
+<!--Navigation bar -->
+
+<div>
+
+    <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+  }
+  </style >
+  
+    <ul>
+    <li><a class="active" href="main11.html">Home</a></li>
+    <li><a class="active" href="#home">Exam time table</a></li>
+    <li><a href="#news">Exam Alteration</a></li>
+    <li><a href="#contact">Feed back</a></li>
+    <li><a href="#about">Contact us</a></li>
+     <li style="float: right;"><a href="#about">Login</a></li>
+  </ul>
+  
+  </div>
+  <!--Navigation bar-->
+  <br><br>
+  
+
+
+
+
+    <div class="container" style="opacity: 1;">
+        <p style="text-align: center;font-size: 30px;">Exam Alteration Helper</p>
+        <form action="alterstore.php" method="POST" enctype="multipart/form-data" style="background-color: transparent;">
+            <label for="tname">Your Name:</label>
+            <input type="text" id="tname" name="tname">
+<br><br>
+            <label for="examName">Exam Name:</label>
+            <input type="text" id="examName" name="examName">
+            <br><br>
+            <label for="examDate">Date of Exam:</label>
+            <input type="text" id="examDate" name="examDate">
+            <br><br>
+            <label for="reason">Reason for Altering of Exam:</label>
+            <textarea id="reason" name="reason" rows="4" cols="50"></textarea>
+            <br><br>
+            <label for="pdfFile">Upload PDF File:</label>
+            <input type="file" id="pdfFile" name="pdfFile">
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

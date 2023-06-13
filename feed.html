@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Feedback Form</title>
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+     
+    }
+    
+    .form-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      background-color: #f1f1f1;
+      transition: background-color 0.3s ease;
+    }
+    
+    .form-container:hover {
+      background-color: #ddd;
+    }
+    
+    form {
+      background-color: #f1f1f1;
+      border-radius: 5px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    form h2 {
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      transition: border-color 0.3s ease;
+    }
+    
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #ffcc00;
+    }
+    
+    input[type="submit"] {
+      background-color: #fbd0d9;
+      color: crimson;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: crimson;
+      color: #fff; 
+    }
+    
+    label {
+      margin-right: 10px;
+    }
+    
+    .rating input[type="radio"] {
+      display: none;
+    }
+    
+    .rating label {
+      color: #ddd;
+      font-size: 25px;
+    }
+    
+    .rating label:hover,
+    .rating label:hover ~ label,
+    .rating input[type="radio"]:checked ~ label {
+      color: #ffcc00 ;
+    }
+</style>
+<script>
+function validateForm() {
+  var name = document.forms["feedbackForm"]["name"].value;
+  var email = document.forms["feedbackForm"]["email"].value;
+  var comments = document.forms["feedbackForm"]["comments"].value;
+
+  if (name === "") {
+    alert("Name must be filled out");
+    return false;
+  }
+  
+  if (email === "") {
+    alert("Email must be filled out");
+    return false;
+  } else {
+    // Email validation regular expression
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.match(emailRegex)) {
+      alert("Invalid email address");
+      return false;
+    }
+  }
+  
+  if (comments === "") {
+    alert("Comments must be filled out");
+    return false;
+  }
+}
+</script>
+</head>
+
+<body style=" background-color: black;">
+  
+
+
+
+<!--Navigation bar -->
+
+<div>
+
+  <style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+  font-size: 18px;
+}
+
+.navbrar{
+    overflow: hidden;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbrar1{
+    overflow: hidden;
+
+  position: fixed;
+
+}
+
+</style>
+
+  <ul class="navbrar">
+  <li><a class="active" href="http://localhost/nanu/main.html">Home</a></li>
+  <li><a class="active" href="#home" >Exam time table</a></li>
+  <li><a href="http://localhost/nanu/alterationformteacher.html">Exam Alteration</a></li>
+  <li><a href="http://localhost/nanu/feed.html" style="background-color: whitesmoke;
+    color: black;">Feed back</a></li>
+  <li><a href="#about">Contact us</a></li>
+   <li style="float: right;"><a href="#about">Login</a></li>
+</ul>
+</div>
+<br>
+<br>
+<div class="form-container" style=" background-color: black;opacity: 0.85;">
+  <h2 style="color: white;">Feel free to share your feedback with us!</h2>
+  
+  <form name="feedbackForm" action="feedback.php" method="post" onsubmit="return validateForm()">
+    Name:<br>
+    <input type="text" name="name"><br><br>
+    
+    Email:<br>
+    <input type="text" name="email"><br><br>
+    
+    Comments:<br>
+    <textarea name="comments" rows="10" cols="50"></textarea><br><br>
+    
+    Rate our service:<br>
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5" title="5 stars">5 stars&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4" title="4 stars">4 stars&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3" title="3 stars">3 stars&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2" title="2 stars">2 stars&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1" title="1 star">1 star&#9733;</label>
+    </div><br><br>
+    
+    <input type="submit" value="Submit">
+  </form>
+</div>
+</body>
+</html>

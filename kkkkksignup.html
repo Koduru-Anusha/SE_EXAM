@@ -1,0 +1,141 @@
+<!DOCTYPE html>   
+<html lang="en">   
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">  
+<meta name="referrer" content="origin">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<title> SignUp Page </title>
+<script>
+  window.onclick = function() {
+      window.location.href("smi.html");
+    };
+</script>
+</head>
+
+<style>
+     
+Body {
+	font-family: Calibri, Helvetica, sans-serif;
+	background-image: url("https://media.istockphoto.com/id/1130676331/photo/empty-dark-wooden-table-in-front-of-abstract-blurred-bokeh-background-of-restaurant-can-be.jpg?s=170667a&w=0&k=20&c=Clnqm6lVyOHycuvki5D3jTszS20V3Mt4_FpM1GpvWBo=");
+	color: none;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	place-items: center;
+	text-align: center;
+}
+
+button {
+	background-color: #4CAF50;
+	width: 40%;
+	color: white;
+	text-decoration: bold;
+	padding: 15px;
+	margin: 10px 0px;
+	border: none;
+	border-radius: 25px;
+	cursor: pointer;
+}
+select {
+
+  appearance: none;
+  
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: 20px;
+  cursor: inherit;
+  line-height: inherit;
+  color:white;
+  text-align: center;
+}
+
+
+input[type=text],
+input[type=password],input[type=email],option,p 
+ {
+	background: transparent;
+	fill: none;
+	border: none;
+	border-bottom: 2px solid black;
+	width: 300px;
+	height: 300 px;
+	;
+	margin: 8px 0;
+	padding: 12px 20px;
+	display: inline-block;
+	font-size: 16px;
+	margin-bottom: 16px;
+	box-sizing: border-box;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+
+.container {
+
+	margin: auto;
+	width: 330px;
+	border-radius: 10px;
+	padding: 40px 40px;
+	margin-top: 100px;
+	box-shadow: -3px -3px 9px #aaa9a9a2,
+		3px 3px 7px rgba(147, 149, 151, 0.671);
+}
+
+h1 {
+	color: wheat;
+
+}
+
+::placeholder {
+	color: white;
+	opacity: 1;
+}
+
+input:focus {
+	outline: none;
+	border-bottom: 2px solid darkgreen;
+}
+
+a {
+	color: skyblue;
+}
+
+
+  </style>   
+</style> 
+</head>  
+   
+<body>
+  
+<form id="form_id" action="kkkkksignup.php" method="POST" name="myform"> 
+   <div class="container">
+  <center>
+  <h1>Register Now</h1>
+  <center><input  type="text" style="color: white;" required placeholder="Enter Username" name="username" id="username" required><br>
+    <input type="email"  style="color: white;" required placeholder="Enter e-mail" name="email" id="email" required><br>    
+    <input type="password" style="color: white;"  required placeholder="Enter Password" name="password" id="password" required><br>
+    <input type="password"  style="color: white;" required  placeholder="Confirm Password" name="cpassword" id="password1" required><br>
+    <select name="user_type" clas="select">
+      <option value="user" class="option"><p style="color: black;size: 30px;">User</p></option>
+      <option value="admin" class="option" style="color: black;">Admin</option>
+   </select><br>
+    <button type="submit" style="color: white;"  id="submit" name="submit"><b>CREATE ACCOUNT</b></button>     
+    <br>Have an account already?<a href="kkkkklogin.html"> Log In</a>
+    
+</center>  
+</div>   
+</form>
+<h3>Copyright © 2020 Amrita Technologies.</h3>
+</body>
+</html>  

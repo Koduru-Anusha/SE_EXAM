@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://images.unsplash.com/photo-1504610926078-a1611febcad3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=880&q=80');
+            background-size: cover;
+       
+        background-repeat: no-repeat;
+  
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px;
+          color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: transparent;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+           
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .results {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .results h2 {
+            margin-top: 0;
+        }
+
+        .results ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .results li {
+            margin-bottom: 5px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Handle form submission
+            $('form').submit(function(e) {
+                e.preventDefault(); // Prevent form submission
+
+                // Get the input values
+                var teacherName = $('#teacherNameInput').val();
+                var examDate = $('#examDateInput').val();
+
+                // Send AJAX request
+                $.ajax({
+                    url: 'search.php',
+                    method: 'POST',
+                    data: {
+                        teacherNameInput: teacherName,
+                        examDateInput: examDate
+                    },
+                    success: function(response) {
+                        $('#searchResults').html(response);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    
+<!--Navigation bar -->
+
+<div>
+
+    <style>
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: transparent;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: white;
+    color: black;
+    font-size: 18px;
+  }
+  </style >
+  
+    <ul>
+    <li><a class="active" href="main.html">Home</a></li>
+    <li><a class="active" href="#home">Exam time table</a></li>
+    <li><a href="http://localhost/nanu/aexamalterationview.php">Exam Alteration</a></li>
+    <li><a href="#contact">Feed back</a></li>
+    <li><a href="#about">Contact us</a></li>
+     <li style="float: right;"><a href="#about">Login</a></li>
+  </ul>
+  
+  </div>
+  <!--Navigation bar-->
+  <br><br>
+
+
+    <div class="container">
+        <p style="font-size: 30px;">SEE THE AVAILABLE TEACHERS  </p>
+        <form>
+            <label for="teacherNameInput">Enter Teacher Name:</label>
+            <input type="text" id="teacherNameInput" name="teacherNameInput">
+            <br><br>
+            <label for="examDateInput">Enter Exam Date (YYYY-MM-DD):</label>
+            <input type="text" id="examDateInput" name="examDateInput">
+            <br><br>
+            <input type="submit" value="Search">
+        </form>
+        <div class="results">
+            <h2>Search Results</h2>
+           
+            <div id="searchResults" style="color: black;background-color: transparent;opacity: 0.7;">
+                <!-- PHP code will dynamically populate the results here -->
+            </div>
+            <a href="aafinal.html" style="color: #45a049;">Click here to modify the teacher </a>
+        </div>
+    </div>
+</body>
+</html>
